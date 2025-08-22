@@ -2,11 +2,13 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import styles from "./Section.module.css";
 import Card from "../Card/Card";
+import Carousel from "../carousel/Carousel";
 
 const Section = ({ type }) => {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [collapsed, setCollapsed] = useState(false);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -25,7 +27,7 @@ const Section = ({ type }) => {
         };
 
         fetchData();
-    }, []);
+    }, [type]);
 
     return (
         <div className={styles.sectionContainer}>
@@ -37,14 +39,19 @@ const Section = ({ type }) => {
                     <div>New Albums</div>
                 ) : null}
                 {/* Create a simple text button */}
-                <button className={styles.collapseButton}>Collapse</button>
+                <button
+                    onClick={() => setCollapsed(!collapsed)}
+                    className={styles.collapseButton}
+                >
+                    {collapsed ? "Show All" : "Collapse"}
+                </button>
             </div>
 
             {/* Create a grid of two rows and 7 cols */}
 
             {loading && <div>Loading...</div>}
             {!loading && error && <div>{error}</div>}
-            {data.length > 0 && (
+            {data.length > 0 && !collapsed && (
                 <div className={styles.cardGrid}>
                     {data.map((item, index) => (
                         <div>
@@ -57,6 +64,18 @@ const Section = ({ type }) => {
                         </div>
                     ))}
                 </div>
+            )}
+
+            {data.length > 0 && collapsed && (
+                <Carousel
+                    data={data}
+                    renderComponent={(item) => (
+                        <div>
+                            <Card image={item.image} follows={item.follows} />
+                            <h4 className={styles.cardTitle}>{item.title}</h4>
+                        </div>
+                    )}
+                />
             )}
         </div>
     );

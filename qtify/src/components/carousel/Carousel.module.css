@@ -1,0 +1,46 @@
+.wrapper {
+    position: relative;
+    padding: 0 10px;
+    margin-bottom: 20px;
+}
+
+.navigationButtons {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+    z-index: 10;
+    padding: 0 5px;
+    left: 0;
+}
+
+.navigationButton {
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    pointer-events: auto;
+    transition: all 0.2s ease;
+}
+
+.navigationButton:hover {
+    background-color: #f8f8f8;
+    transform: scale(1.1);
+}
+
+/* Add styles for Swiper */
+:global(.swiper-slide) {
+    width: auto;
+    height: auto;
+}
+
+:global(.mySwiper) {
+    padding: 10px 0;
+}
