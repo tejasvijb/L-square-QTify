@@ -25,7 +25,8 @@
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     gap: 16px;
-    row-gap: 24px;
+    row-gap: 32px;
+    padding-inline: 20px;
 }
 
 .cardTitle {
