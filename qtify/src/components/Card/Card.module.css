@@ -37,3 +37,9 @@
     flex-direction: column;
     justify-content: flex-start;
 }
+
+.cardTitle {
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 8px;
+}

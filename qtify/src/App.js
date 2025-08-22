@@ -11,6 +11,7 @@ function App() {
             <Hero />
             <Section type="top" />
             <Section type="new" />
+            <Section type="songs" />
         </div>
     );
 }

@@ -1,0 +1,42 @@
+.cardTitle {
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 8px;
+}
+
+.loadingContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    color: white;
+    font-size: 18px;
+}
+
+.errorContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    color: #ff4646;
+    font-size: 16px;
+}
+
+.emptyContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    color: white;
+    font-style: italic;
+}
+
+.cardTitle {
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 8px;
+    max-width: 160px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
