@@ -1,0 +1,20 @@
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    max-height: 34px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .logo img {
+        max-height: 28px;
+    }
+}

@@ -1,0 +1,29 @@
+@import '../../styles/variables.css';
+
+.button {
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    outline: none;
+}
+
+.primary {
+    background-color: var(--black-color);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+.secondary {
+    background-color: transparent;
+    color: var(--white-color);
+    border: 1px solid var(--white-color);
+}
+
+.secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
