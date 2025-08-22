@@ -1,0 +1,35 @@
+.sectionContainer {
+    width: 100%;
+    padding: 20px;
+}
+
+.sectionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.collapseButton {
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    cursor: pointer;
+    font-size: 14px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.cardGrid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 16px;
+    row-gap: 24px;
+}
+
+.cardTitle {
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 8px;
+}
