@@ -3,7 +3,7 @@ import axios from "axios";
 import styles from "./Section.module.css";
 import Card from "../Card/Card";
 
-const Section = () => {
+const Section = ({ type }) => {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -12,7 +12,7 @@ const Section = () => {
         const fetchData = async () => {
             try {
                 const response = await axios.get(
-                    "https://qtify-backend-labs.crio.do/albums/top"
+                    `https://qtify-backend-labs.crio.do/albums/${type}`
                 );
                 setData(response.data);
                 console.log("Fetched data:", response.data); // Console log the data
@@ -31,7 +31,11 @@ const Section = () => {
         <div className={styles.sectionContainer}>
             {/* We'll add content here later */}
             <div className={styles.sectionHeader}>
-                <div>Top Albums</div>
+                {type === "top" ? (
+                    <div>Top Albums</div>
+                ) : type === "new" ? (
+                    <div>New Albums</div>
+                ) : null}
                 {/* Create a simple text button */}
                 <button className={styles.collapseButton}>Collapse</button>
             </div>
